@@ -1,0 +1,146 @@
+.box-shadow{
+    box-shadow: 1px 5px 5px -4px rgba(0,0,0,0.46);
+}
+
+.text-container{
+    grid-area: itemOne;
+    text-align: center;
+    padding: 200px 50px 10px 30px;
+}
+
+.text-container p{
+    font-size: 55px;
+    margin-top: -25px;
+}
+
+.images-container{
+    display: flex;
+    grid-area: itemTwo;
+}
+
+.images-container div{
+    margin-right: 40px;
+}
+
+.img-text {
+    position: absolute;
+    left: 25px; 
+    bottom: 10px;
+    transform: translate(0, 100%) rotate(-90deg); /* Rotate the text vertically */
+    transform-origin: bottom left; /* Ensures the text rotates around its bottom left corner */
+    color: #FFFFFF;
+    transition: transform 0.3s ease;
+    white-space: nowrap; /* Ensures the text stays on one line */
+}
+
+.image-container-one{
+    background-image: url("https://img.freepik.com/free-photo/tiger-looking-with-open-mouth_1150-18083.jpg?size=626&ext=jpg&ga=GA1.1.888032811.1702743825&semt=sph");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 65%;
+    height: 500px;
+    transition: all 1s ease 0s;
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+.image-container-one:hover .img-text {
+    transform: rotate(0deg); 
+    transform-origin: bottom left;
+    position: absolute;
+    left: 100px; 
+}
+
+.image-container-two{
+    background-image: url("https://img.freepik.com/free-photo/red-deer-nature-habitat-during-deer-rut-european-wildlife_475641-943.jpg?size=626&ext=jpg&ga=GA1.1.888032811.1702743825&semt=sph");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100px;
+    height: 300px;
+    transition: all 1s ease 0s;
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+.image-container-three{
+    background-image: url("https://img.freepik.com/premium-photo/surreal-mammalian-hybrids-creature-half-man-half-rabbit-mythologie-wearing-shirt-jacket_738732-1288.jpg?size=626&ext=jpg&ga=GA1.1.888032811.1702743825&semt=sph");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100px;
+    height: 200px;
+    transition: all 1s ease 0s;
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+.active-tab{
+    width: 65%;
+    height: 500px;
+}
+
+.active-tab .img-text{
+    transform: rotate(0deg);
+    transform-origin: bottom left;
+    position: absolute;
+    left: 100px;
+}
+
+.inactive-tab{
+    width: 100px;
+    height: 200px;
+}
+
+.discover-more{
+    grid-area: itemThree;
+    text-align: center;
+}
+
+.discover-more button{
+    background-color: #00BFFF; 
+    color: #000000; 
+    padding: 10px 20px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: normal;
+    transition: background-color 0.3s, color 0.3s; 
+    cursor: pointer; 
+    text-align: center;
+    display: inline-block; 
+}
+
+.discover-more button:hover{
+    background-color: #00008B;
+    color: #FFFFFF; 
+    border: none;
+}
+
+.content-box{
+    height: 600px;
+    display: grid;
+    grid-template-areas: 'itemOne itemTwo itemTwo itemTwo'
+                         'itemThree itemTwo itemTwo itemTwo';
+                        
+}
+
+@media only screen and (max-width: 768px) {
+    .content-box{
+        height: 600px;
+        display: grid;
+        grid-template-areas: 'itemOne'
+                              'itemTwo'
+                             'itemThree';
+                            
+    }
+
+    .images-container{
+        overflow: scroll;
+        height: 600px;
+    }
+}
+
