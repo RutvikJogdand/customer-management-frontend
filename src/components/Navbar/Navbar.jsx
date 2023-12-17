@@ -45,7 +45,7 @@ export default function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav mx-auto">
-            <a className="nav-item nav-link active" href="#">What's New <span className="sr-only">(current)</span></a>
+            <a className="nav-item nav-link active">What's New <span className="sr-only">(current)</span></a>
 
             <div className="accordion" id="accordionExample">
                 <button onClick={handleAccordian} className="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -54,14 +54,14 @@ export default function Navbar() {
             </div>
 
 
-            <a className="nav-item nav-link" href="#">CB News</a>
-            <a className="nav-item nav-link" href="#">Internship</a>
-            <a className="nav-item nav-link" href="#">About Us</a>
+            <a className="nav-item nav-link">CB News</a>
+            <a className="nav-item nav-link">Internship</a>
+            <a className="nav-item nav-link">About Us</a>
             </div>
             <div className="navbar-nav ml-auto">
             {
                 !login ?
-                <><a className="nav-item nav-link" href="#" onClick={handleLogin}>Login</a> &nbsp; &nbsp; </>
+                <><a className="nav-item nav-link" onClick={handleLogin}>Login</a> &nbsp; &nbsp; </>
                 :
                 <>
                 <div className="dropdown">
@@ -69,11 +69,11 @@ export default function Navbar() {
                         My Account
                     </div>
                     <ul className="dropdown-menu dropdown-menu-dark">
-                        <li><a className="dropdown-item" href="#"> <i className='fa fa-receipt'></i> Purchase history</a></li>
-                        <li><a className="dropdown-item" href="#"> <i className='fa fa-video'></i> Video stream</a></li>
-                        <li><a className="dropdown-item" href="#"> <i className="fa fa-bell"></i> Notifications</a></li>
-                        <li><a className="dropdown-item" href="#"> <i className="fa fa-tools"></i> Settings</a></li>
-                        <li><a className="dropdown-item" href="#" onClick={handleLogout}> <i className="fa fa-sign-out-alt"></i> Logout</a></li>
+                        <li><a className="dropdown-item"> <i className='fa fa-receipt'></i> Purchase history</a></li>
+                        <li><a className="dropdown-item"> <i className='fa fa-video'></i> Video stream</a></li>
+                        <li><a className="dropdown-item"> <i className="fa fa-bell"></i> Notifications</a></li>
+                        <li><a className="dropdown-item"> <i className="fa fa-tools"></i> Settings</a></li>
+                        <li><a className="dropdown-item" onClick={handleLogout}> <i className="fa fa-sign-out-alt"></i> Logout</a></li>
                     </ul>
                 </div>  &nbsp; &nbsp;  &nbsp; &nbsp;
                 </>
