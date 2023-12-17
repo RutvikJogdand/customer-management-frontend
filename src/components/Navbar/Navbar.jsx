@@ -34,8 +34,13 @@ export default function Navbar() {
         </a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon">
+            {
+                accordian?
+                <img data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" src={require("../../assets/burger-menu.png")} height={20} alt='' />
+                :
+                <img  src={require("../../assets/burger-menu.png")} height={20} alt='' />
 
-            <img data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" src={require("../../assets/burger-menu.png")} height={20} alt='' />
+            }
             </span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
