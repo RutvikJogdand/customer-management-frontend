@@ -4,6 +4,7 @@ import "./Navbar.css"
 export default function Navbar() {
 
   const [tabIndex, setTabIndex] = useState(0);
+  const [accordian, setAccodian] = useState(false)
 
   const handleFocus = (tabIndex) => {
     setTabIndex(tabIndex);
@@ -11,6 +12,10 @@ export default function Navbar() {
 
   const handleMouseLeave = () => {
     setTabIndex(0);
+  }
+
+  const handleAccordian = () => {
+    setAccodian(!accordian);
   }
   return (
     <>
@@ -29,8 +34,8 @@ export default function Navbar() {
             <a className="nav-item nav-link active" href="#">What's New <span className="sr-only">(current)</span></a>
 
             <div className="accordion" id="accordionExample">
-                <button className="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                Knowledge Hub
+                <button onClick={handleAccordian} className="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Knowledge Hub {accordian ?<i className='fa fa-angle-up'></i> : <i className='fa fa-angle-down'></i>}
                 </button>
             </div>
 
@@ -40,23 +45,41 @@ export default function Navbar() {
             <a className="nav-item nav-link" href="#">About Us</a>
             </div>
             <div className="navbar-nav ml-auto">
-            <a className="nav-item nav-link" href="#">Login</a>
-            <button className="nav-item btn btn-primary" type="button">Register Now</button>
+            <a className="nav-item nav-link" href="#">Login</a> &nbsp; &nbsp;
+            <button className="nav-item btn register-now" type="button">Register Now</button>
             </div>
         </div>
         </nav>
         <div>
-            {/* <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                </h5>
-            </div> */}
-
             <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div className="card">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                <div className="card accordian-content-container">
+                    <div>
+                        <p className='cta-main'>Join our registration list</p>
+                        <p className='cta-helper'>And receive updates, expert educational insights, and early access to our platform</p>
+
+                        <div>
+                            <button className='join-button'>Join</button> &nbsp;
+                            <a href="#" class="icon-button facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="icon-button twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="icon-button instagram"><i class="fab fa-instagram"></i></a>
+
+                        </div>
+                    </div>
+                    <div className='selling-products-list-container'>
+                        <ul className='selling-products-list'>
+                            <li>Masterclass</li>
+                            <li>Webinar</li>
+                            <li>CB Connect</li>
+                            <li>Blogs</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src={require("../../assets/banner.png")} height={250}/>
+                    </div>
                 </div>
             </div>
         </div> 
+
         <div className='content-box'>
             <section className='text-container'>
                 <p>Explore</p>
@@ -66,13 +89,16 @@ export default function Navbar() {
             <section className='images-container'>
                 {/* Images */}
                 <div  onMouseLeave={handleMouseLeave} onTouchStart={() => handleFocus(0)} onMouseOver={() => handleFocus(0)} className={` ${tabIndex === 0 ? 'active-tab' : 'inactive-tab'} image-container-one`}>
-                    <p className={`${"img-text"}`}>Masterclass</p>
+                    <p className={`${"img-text"}`}> <div className='circle-div'></div> <div className='text-value'> Masterclass </div></p>
+                    <div className='subtext'>Real-world learnings from the best.</div>  
                 </div>
                 <div  onMouseLeave={handleMouseLeave} onTouchStart={() => handleFocus(1)}  onMouseOver={() => handleFocus(1)} className={`  ${tabIndex === 1 ? 'active-tab' : tabIndex === 2 && 'second-inactive-tab'} image-container-two`}>
-                    <p className={`${"img-text"}`}>Webinar</p>
+                    <p className={`${"img-text"}`}>  <div className='circle-div'></div> <div className='text-value'> Webinar </div></p>
+                    <div className='subtext'>Learn industry relevant skills online.</div>
                 </div>
                 <div  onMouseLeave={handleMouseLeave} onTouchStart={() => handleFocus(2)} onMouseOver={() => handleFocus(2)} className={`  ${tabIndex === 2 ? 'active-tab' : 'third-inactive-tab'} image-container-three`}>
-                    <p className={`${"img-text"}`}>Podcast</p>
+                    <p className={`${"img-text"}`}>  <div className='circle-div'></div> <div className='text-value'> Podcast </div></p>
+                    <div className='subtext'>Learn industry trends from experts.</div>
                 </div>
 
             </section>
