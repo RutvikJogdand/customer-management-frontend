@@ -1,0 +1,309 @@
+.box-shadow{
+    box-shadow: 1px 5px 5px -4px rgba(0,0,0,0.46);
+}
+
+.text-container{
+    grid-area: itemOne;
+    text-align: center;
+    padding: 200px 50px 10px 30px;
+}
+
+.text-container p{
+    font-size: 55px;
+    margin-top: -25px;
+}
+
+.images-container{
+    display: flex;
+    grid-area: itemTwo;
+}
+
+.images-container > div{
+    margin-right: 40px;
+}
+
+.img-text {
+    position: absolute;
+    left: 104px;
+    display: flex;
+    bottom: 91px;
+    transform: translate(0, 100%) rotate(-90deg); /* Rotate the text vertically */
+    transform-origin: bottom left; /* Ensures the text rotates around its bottom left corner */
+    color: #FFFFFF;
+    transition: transform 1s ease;
+    padding-top: 20px;
+    white-space: nowrap; /* Ensures the text stays on one line */
+}
+
+
+.active-tab .subtext{
+    display: block;
+    position: absolute;
+    bottom: 24px;
+    left: 30px;
+    font-size: 13px;
+    /* width: 150px; */
+    opacity: 1;
+    color: #FFFFFF;
+    /* text-wrap: wrap; */
+    transform: translateY(0);
+    font-weight: 600;
+}
+
+.subtext{
+    opacity: 0; /* Start with text fully transparent */
+    transform: translateY(20px); /* Start with the text slightly below the normal position */
+    transition: opacity 1s ease, transform 0.5s ease; /* Transition for both opacity and transform */
+    pointer-events: none; /* Ensures that the text doesn't interfere with container's hover */
+}
+.text-value{
+    font-size: 22px;
+    padding-top: 15px;
+}
+
+.image-container-one{
+    background-image: url("https://img.freepik.com/free-photo/tiger-looking-with-open-mouth_1150-18083.jpg?size=626&ext=jpg&ga=GA1.1.888032811.1702743825&semt=sph");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 500px;
+    transition: all 1s ease 0s;
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+.image-container-one:hover .img-text {
+    transform: rotate(0deg); 
+    transform-origin: bottom left;
+    position: absolute;
+    left: 10px; 
+}
+
+.image-container-two{
+    background-image: url("https://img.freepik.com/free-photo/red-deer-nature-habitat-during-deer-rut-european-wildlife_475641-943.jpg?size=626&ext=jpg&ga=GA1.1.888032811.1702743825&semt=sph");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 300px;
+    transition: all 1s ease 0s;
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+.image-container-three{
+    background-image: url("https://img.freepik.com/premium-photo/surreal-mammalian-hybrids-creature-half-man-half-rabbit-mythologie-wearing-shirt-jacket_738732-1288.jpg?size=626&ext=jpg&ga=GA1.1.888032811.1702743825&semt=sph");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 200px;
+    transition: all 1s ease 0s;
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+.image-container-one, .image-container-two, .image-container-three{
+    min-width: 150px;
+    border-radius: 15px;
+}
+
+.active-tab{
+    width: 65%;
+    height: 500px;
+}
+
+.active-tab .img-text{
+    transform: rotate(0deg);
+    transform-origin: bottom left;
+    position: absolute;
+    left: 10px;
+    bottom: 27px 
+}
+
+.inactive-tab{
+    width: 100px;
+    height: 200px;
+}
+
+.discover-more{
+    grid-area: itemThree;
+    text-align: center;
+}
+
+.discover-more button{
+    background-color: #78C4FE; 
+    color: #000000; 
+    padding: 15px 20px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: normal;
+    transition: background-color 0.3s, color 0.3s; 
+    cursor: pointer; 
+    text-align: center;
+    display: inline-block; 
+}
+
+.discover-more button:hover{
+    background-color: #173D7A;
+    color: #FFFFFF; 
+    border: none;
+}
+
+.content-box{
+    height: 550px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-areas: 'itemOne itemTwo itemTwo itemTwo'
+                         'itemThree itemTwo itemTwo itemTwo';                        
+}
+
+.circle-div{
+    width: 70px; /* Width of the circle */
+    height: 70px; /* Height of the circle, should be the same as the width */
+    border-radius: 50%; /* This creates the round shape */
+    background-color: #3498db; /* Just an example color, change as needed */
+    margin-right: -50px;
+    margin-bottom: 10px;
+}
+
+.accordian-content-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.icon-button {
+    display: inline-block;
+    width: 30px; /* Size of the button */
+    height: 30px; /* Size of the button */
+    border-radius: 50%; /* Make it round */
+    border: 1px solid;
+    background-color: #FFFFFF; /* Light background */
+    color: #000000; /* Icon color */
+    text-align: center;
+    line-height: 24px; /* Center the icon vertically */
+    margin-right: 8px; /* Space between buttons */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+  }
+  
+  .icon-button i {
+    /* Icon styles */
+    vertical-align: middle;
+  }
+  
+  /* Hover state for each social media button */
+  .icon-button:hover {
+    background-color: #173D7A; /* Darker shade of blue */
+    color: #FFFFFF; /* White text */
+  }
+
+  .cta-main{
+    font-size: 35px;
+  }
+
+  .cta-helper{
+    font-size: 18px;
+    color: #787882;
+  }
+
+  .selling-products-list{
+    color: #173D7A;
+  }
+
+  .selling-products-list-container{
+    padding: 10px;
+  }
+
+  .join-button {
+    background-color: #173D7A; /* Dark blue background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Top and bottom padding 10px, left and right padding 20px */
+    border: none; /* No border */
+    border-radius: 20px; /* Fully rounded corners for pill shape */
+    font-size: 16px; /* Example font-size, adjust as needed */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the button */
+    cursor: pointer; /* Change cursor to pointer to indicate a clickable button */
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block; /* Allow width and height to be set */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  }
+  
+  /* Assuming you want the button to darken on hover */
+  .join-button:hover {
+    background-color: #0C2A3D; /* Slightly darker shade of blue on hover */
+  }
+
+  .nav-item{
+    text-decoration: none;
+    color: black;
+  }
+
+  .nav-item:hover{
+    color: black;
+  }
+  
+  .btn-link{
+    color: black;
+    text-decoration: none;
+    text-decoration-line: none;
+  }
+
+  .register-now{
+    background-color: #173D7A; /* Dark blue background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Top and bottom padding 10px, left and right padding 20px */
+    border: none; /* No border */
+    border-radius: 20px; /* Fully rounded corners for pill shape */
+  }
+
+@media only screen and (max-width: 768px) {
+    .content-box{
+        height: 500px;
+        display: grid;
+        grid-template-areas: 'itemOne'
+                              'itemTwo'
+                             'itemThree';
+                            
+    }
+
+    .text-container{
+        text-align: left;
+        padding-left: 20px;
+        padding-top: 40px;
+    }
+
+    .images-container{
+        overflow: scroll;
+        height: 500px;
+    }
+
+    .image-container-one{
+        margin-left: 20px;
+    }
+    .discover-more{
+        margin-top: 20px;
+        text-align: left;
+        padding-left: 20px;
+        margin-top: 30px;
+    }
+
+    .active-tab .subtext{
+        width: 140px;
+        text-wrap: wrap;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .accordian-content-container{
+        flex-direction: column;
+    }
+    
+}
+
