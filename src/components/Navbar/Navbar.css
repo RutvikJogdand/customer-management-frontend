@@ -187,6 +187,7 @@
     background-color: #FFFFFF; /* Light background */
     color: #000000; /* Icon color */
     text-align: center;
+    cursor: pointer;
     line-height: 24px; /* Center the icon vertically */
     margin-right: 8px; /* Space between buttons */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */

@@ -91,11 +91,11 @@ export default function Navbar() {
 
                         <div>
                             <button className='join-button'>Join</button> &nbsp;
-                            <a href="#" className="icon-button facebook"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="icon-button twitter"><i className="fab fa-twitter"></i></a>
-                            <a href="#" className="icon-button instagram"><i className="fab fa-instagram"></i></a>
-                            <a href="#" className="icon-button instagram"><i className="fab fa-whatsapp"></i></a>
-                            <a href="#" className="icon-button instagram"><i className="fa fa-envelope"></i></a>
+                            <span className="icon-button facebook"><i className="fab fa-facebook-f"></i></span>
+                            <span className="icon-button twitter"><i className="fab fa-twitter"></i></span>
+                            <span className="icon-button instagram"><i className="fab fa-instagram"></i></span>
+                            <span className="icon-button instagram"><i className="fab fa-whatsapp"></i></span>
+                            <span className="icon-button instagram"><i className="fa fa-envelope"></i></span>
                         </div>
                     </div>
                     <div className='selling-products-list-container'>
