@@ -5,6 +5,7 @@ export default function Navbar() {
 
   const [tabIndex, setTabIndex] = useState(0);
   const [accordian, setAccodian] = useState(false)
+  const [login, setLogin] = useState(false);
 
   const handleFocus = (tabIndex) => {
     setTabIndex(tabIndex);
@@ -17,6 +18,14 @@ export default function Navbar() {
   const handleAccordian = () => {
     setAccodian(!accordian);
   }
+
+  const handleLogin = () => {
+    setLogin(true);
+  }
+
+  const handleLogout = () => {
+    setLogin(false)
+  }
   return (
     <>
         <nav className="navbar box-shadow p-3 navbar-expand-lg navbar-white bg-white">
@@ -26,7 +35,7 @@ export default function Navbar() {
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon">
 
-            <img src={require("../../assets/burger-menu.png")} height={20} alt='' />
+            <img data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" src={require("../../assets/burger-menu.png")} height={20} alt='' />
             </span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -45,7 +54,25 @@ export default function Navbar() {
             <a className="nav-item nav-link" href="#">About Us</a>
             </div>
             <div className="navbar-nav ml-auto">
-            <a className="nav-item nav-link" href="#">Login</a> &nbsp; &nbsp;
+            {
+                !login ?
+                <><a className="nav-item nav-link" href="#" onClick={handleLogin}>Login</a> &nbsp; &nbsp; </>
+                :
+                <>
+                <div className="dropdown">
+                    <div className="pt-2 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        My Account
+                    </div>
+                    <ul className="dropdown-menu dropdown-menu-dark">
+                        <li><a className="dropdown-item" href="#"> <i className='fa fa-receipt'></i> Purchase history</a></li>
+                        <li><a className="dropdown-item" href="#"> <i className='fa fa-video'></i> Video stream</a></li>
+                        <li><a className="dropdown-item" href="#"> <i className="fa fa-bell"></i> Notifications</a></li>
+                        <li><a className="dropdown-item" href="#"> <i className="fa fa-tools"></i> Settings</a></li>
+                        <li><a className="dropdown-item" href="#" onClick={handleLogout}> <i className="fa fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>  &nbsp; &nbsp;  &nbsp; &nbsp;
+                </>
+            }    
             <button className="nav-item btn register-now" type="button">Register Now</button>
             </div>
         </div>
@@ -59,10 +86,11 @@ export default function Navbar() {
 
                         <div>
                             <button className='join-button'>Join</button> &nbsp;
-                            <a href="#" class="icon-button facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="icon-button twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="icon-button instagram"><i class="fab fa-instagram"></i></a>
-
+                            <a href="#" className="icon-button facebook"><i className="fab fa-facebook-f"></i></a>
+                            <a href="#" className="icon-button twitter"><i className="fab fa-twitter"></i></a>
+                            <a href="#" className="icon-button instagram"><i className="fab fa-instagram"></i></a>
+                            <a href="#" className="icon-button instagram"><i className="fab fa-whatsapp"></i></a>
+                            <a href="#" className="icon-button instagram"><i className="fa fa-envelope"></i></a>
                         </div>
                     </div>
                     <div className='selling-products-list-container'>
@@ -74,7 +102,7 @@ export default function Navbar() {
                         </ul>
                     </div>
                     <div>
-                        <img src={require("../../assets/banner.png")} height={250}/>
+                        <img className='img-fluid' src={require("../../assets/banner.png")} height={200}/>
                     </div>
                 </div>
             </div>
@@ -82,28 +110,28 @@ export default function Navbar() {
 
         <div className='content-box'>
             <section className='text-container'>
-                <p>Explore</p>
-                <p>Upskill</p>
-                <p>Elevate</p>
+                <p>Explore.</p>
+                <p>Upskill.</p>
+                <p>Elevate.</p>
             </section>
             <section className='images-container'>
                 {/* Images */}
                 <div  onMouseLeave={handleMouseLeave} onTouchStart={() => handleFocus(0)} onMouseOver={() => handleFocus(0)} className={` ${tabIndex === 0 ? 'active-tab' : 'inactive-tab'} image-container-one`}>
-                    <p className={`${"img-text"}`}> <div className='circle-div'></div> <div className='text-value'> Masterclass </div></p>
+                    <p className={`${"img-text"}`}> <div style={{background:"#F18F01"}} className='circle-div'></div> <div className='text-value'> Masterclass </div></p>
                     <div className='subtext'>Real-world learnings from the best.</div>  
                 </div>
                 <div  onMouseLeave={handleMouseLeave} onTouchStart={() => handleFocus(1)}  onMouseOver={() => handleFocus(1)} className={`  ${tabIndex === 1 ? 'active-tab' : tabIndex === 2 && 'second-inactive-tab'} image-container-two`}>
-                    <p className={`${"img-text"}`}>  <div className='circle-div'></div> <div className='text-value'> Webinar </div></p>
+                    <p className={`${"img-text"}`}>  <div style={{background:"115D98"}} className='circle-div'></div> <div className='text-value'> Webinar </div></p>
                     <div className='subtext'>Learn industry relevant skills online.</div>
                 </div>
                 <div  onMouseLeave={handleMouseLeave} onTouchStart={() => handleFocus(2)} onMouseOver={() => handleFocus(2)} className={`  ${tabIndex === 2 ? 'active-tab' : 'third-inactive-tab'} image-container-three`}>
-                    <p className={`${"img-text"}`}>  <div className='circle-div'></div> <div className='text-value'> Podcast </div></p>
+                    <p className={`${"img-text"}`}>  <div style={{background:"#147B85"}} className='circle-div'></div> <div className='text-value'> Podcast </div></p>
                     <div className='subtext'>Learn industry trends from experts.</div>
                 </div>
 
             </section>
             <section className='discover-more'>
-                <button>Discover Now </button>
+                <button>Discover Now  <i className='fa fa-arrow-right'></i> </button>
             </section>
         </div>
     </>

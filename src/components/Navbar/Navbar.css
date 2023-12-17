@@ -136,9 +136,9 @@
 }
 
 .discover-more button{
-    background-color: #00BFFF; 
+    background-color: #78C4FE; 
     color: #000000; 
-    padding: 10px 20px;
+    padding: 15px 20px;
     border: none;
     text-transform: uppercase;
     font-weight: normal;
@@ -149,13 +149,14 @@
 }
 
 .discover-more button:hover{
-    background-color: #00008B;
+    background-color: #173D7A;
     color: #FFFFFF; 
     border: none;
 }
 
 .content-box{
     height: 550px;
+    margin-bottom: 20px;
     display: grid;
     grid-template-areas: 'itemOne itemTwo itemTwo itemTwo'
                          'itemThree itemTwo itemTwo itemTwo';                        
@@ -198,7 +199,7 @@
   
   /* Hover state for each social media button */
   .icon-button:hover {
-    background-color: #00008B; /* Darker shade of blue */
+    background-color: #173D7A; /* Darker shade of blue */
     color: #FFFFFF; /* White text */
   }
 
@@ -290,6 +291,7 @@
         margin-top: 20px;
         text-align: left;
         padding-left: 20px;
+        margin-top: 30px;
     }
 
     .active-tab .subtext{
@@ -302,5 +304,6 @@
     .accordian-content-container{
         flex-direction: column;
     }
+    
 }
 
