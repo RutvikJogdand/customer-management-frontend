@@ -36,7 +36,7 @@ export default function Navbar() {
             <span className="navbar-toggler-icon">
             {
                 accordian?
-                <img data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" src={require("../../assets/burger-menu.png")} height={20} alt='' />
+                <img /*data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"*/ src={require("../../assets/burger-menu.png")} height={20} alt='' />
                 :
                 <img  src={require("../../assets/burger-menu.png")} height={20} alt='' />
 
